@@ -1,7 +1,7 @@
 lagu = []
 
 def tambah_lagu(judul, penyanyi):
-    lagu.append(f" Judul: {judul} penyanyi: {penyanyi}")
+    lagu.append("Judul: ", judul, "penyanyi: ", penyanyi)
     print("Lagu berhasil ditambahkan")
 
 def tampilkan_lagu():
@@ -9,11 +9,15 @@ def tampilkan_lagu():
         print("Belum ada koleksi lagu")
     else:
         for i, l in enumerate(lagu, start=1):
-            print(f"{i}. {l['lagu']} - {l['penyanyi']}")
+            print(f"{i}. {l['judul']} - {l['penyanyi']}")
 
-def hapus_lagu():
+def hapus_lagu(judul):
     for i in range(len(lagu)):
-        lagu[i]["judul"]
+        if lagu[i]["judul"] == judul:
+            lagu.pop(i)
+        print("Lagu berhasil dihapus")
+
+    print("Judul tidak dapat ditemukan")
 
 def cari_lagu(keyword):
     hasil = list(filter(lambda x: keyword.lower() in x['penyanyi'].lower(), lagu))
