@@ -1,7 +1,7 @@
 lagu = []
 
 def tambah_lagu(judul, penyanyi):
-    lagu.append("Judul: ", judul, "penyanyi: ", penyanyi)
+    lagu.append({"judul": judul, "penyanyi": penyanyi})
     print("Lagu berhasil ditambahkan")
 
 def tampilkan_lagu():
@@ -15,7 +15,8 @@ def hapus_lagu(judul):
     for i in range(len(lagu)):
         if lagu[i]["judul"] == judul:
             lagu.pop(i)
-        print("Lagu berhasil dihapus")
+            print("Lagu berhasil dihapus")
+            return
 
     print("Judul tidak dapat ditemukan")
 
